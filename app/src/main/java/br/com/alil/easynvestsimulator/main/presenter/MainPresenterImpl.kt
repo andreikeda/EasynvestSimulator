@@ -1,6 +1,7 @@
 package br.com.alil.easynvestsimulator.main.presenter
 
 import android.app.Activity
+import br.com.alil.easynvestsimulator.R
 import br.com.alil.easynvestsimulator.domain.model.SimulateResponse
 import br.com.alil.easynvestsimulator.main.interactor.MainInteractor
 import br.com.alil.easynvestsimulator.main.interactor.MainInteractorImpl
@@ -14,6 +15,18 @@ class MainPresenterImpl(var view: MainView?) : MainPresenter, MainInteractorOutp
     private var router: MainRouter? = MainRouterImpl(view as Activity)
 
     override fun onSimulateClicked(investedAmout: String, rate: String, maturityDate: String) {
+        if (investedAmout.isEmpty()) {
+            view?.showError(R.string.error_empty_field)
+            return
+        }
+        if (rate.isEmpty()) {
+            view?.showError(R.string.error_empty_field)
+            return
+        }
+        if (maturityDate.isEmpty()) {
+            view?.showError(R.string.error_empty_field)
+            return
+        }
         view?.showLoading()
         interactor?.simulate(investedAmout.toDouble(), rate.toInt(), maturityDate)
     }
@@ -27,10 +40,12 @@ class MainPresenterImpl(var view: MainView?) : MainPresenter, MainInteractorOutp
     }
 
     override fun onSimulateError(errorMessage: String) {
+        view?.hideLoading()
         view?.showError(errorMessage)
     }
 
     override fun onSimulateSuccess(response: SimulateResponse) {
+        view?.hideLoading()
         router?.goToDetails(response)
     }
 

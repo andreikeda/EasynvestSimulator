@@ -4,6 +4,8 @@
     <string name="button_simulate">Simular</string>
     <string name="button_simulate_again">Simular novamente</string>
 
+    <string name="error_empty_field">Todos os campos devem ser preenchidos</string>
+
     <string name="hint_currency">R$</string>
     <string name="hint_date">dia/mês/ano</string>
     <string name="hint_percent">100%</string>
