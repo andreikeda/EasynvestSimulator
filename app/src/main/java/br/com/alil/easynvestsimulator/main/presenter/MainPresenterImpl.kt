@@ -14,16 +14,16 @@ class MainPresenterImpl(var view: MainView?) : MainPresenter, MainInteractorOutp
     private var interactor: MainInteractor? = MainInteractorImpl(this)
     private var router: MainRouter? = MainRouterImpl(view as Activity)
 
-    override fun onSimulateClicked(investedAmout: String, rate: String, maturityDate: String) {
+    override fun onSimulateClicked(investedAmout: String, maturityDate: String, rate: String) {
         if (investedAmout.isEmpty()) {
             view?.showError(R.string.error_empty_field)
             return
         }
-        if (rate.isEmpty()) {
+        if (maturityDate.isEmpty()) {
             view?.showError(R.string.error_empty_field)
             return
         }
-        if (maturityDate.isEmpty()) {
+        if (rate.isEmpty()) {
             view?.showError(R.string.error_empty_field)
             return
         }

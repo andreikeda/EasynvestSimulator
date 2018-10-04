@@ -3,14 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
         <item name="colorAccent">@color/colorWhite</item>
     </style>
 
     <style name="ButtonRounded" parent="Base.Widget.AppCompat.Button">
         <item name="android:background">@drawable/button_shape</item>
-        <item name="android:textAppearance">@style/Text.H2</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
     <style name="Text" parent="TextAppearance.AppCompat">
