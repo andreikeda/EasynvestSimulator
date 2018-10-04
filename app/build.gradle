@@ -6,6 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "br.com.alil.easynvestsimulator"
         minSdkVersion 16
@@ -13,6 +14,8 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "URL_BASE", '"https://api-simulator-calc.easynvest.com.br/"'
     }
     buildTypes {
         release {
