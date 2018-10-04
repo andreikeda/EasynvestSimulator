@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Easynvest Simulator</string>
+
+    <string name="button_simulate">Simular</string>
+    <string name="button_simulate_again">Simular novamente</string>
+
+    <string name="hint_currency">R$</string>
+    <string name="hint_date">dia/mês/ano</string>
+    <string name="hint_percent">100%</string>
+
+    <string name="label_first_input">Quanto você gostaria de aplicar?*</string>
+    <string name="label_second_input">Qual a data de vencimento do investimento?*</string>
+    <string name="label_third_input">Qual o percentual do CDI do investimento?*</string>
 </resources>
