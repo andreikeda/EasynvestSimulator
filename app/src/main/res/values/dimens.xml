@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_button">50dp</dimen>
+    <dimen name="radius_button">25dp</dimen>
+    <dimen name="text_h1">38sp</dimen>
+    <dimen name="text_h2">16sp</dimen>
+    <dimen name="text_h3">15sp</dimen>
+</resources>
