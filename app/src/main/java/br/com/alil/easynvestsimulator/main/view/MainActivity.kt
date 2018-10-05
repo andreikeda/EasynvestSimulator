@@ -1,11 +1,13 @@
 package br.com.alil.easynvestsimulator.main.view
 
+import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import br.com.alil.easynvestsimulator.R
+import br.com.alil.easynvestsimulator.RC_SIMULATE_AGAIN
 import br.com.alil.easynvestsimulator.addDateTextChangeListener
 import br.com.alil.easynvestsimulator.details.view.DetailsActivity
 import br.com.alil.easynvestsimulator.main.presenter.MainPresenter
@@ -15,6 +17,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity(), MainView {
 
     private var presenter: MainPresenter? = null
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        when (requestCode) {
+            RC_SIMULATE_AGAIN -> {
+                if (resultCode == Activity.RESULT_OK) {
+                    et_first_input.setText("")
+                    et_second_input.setText("")
+                    et_third_input.setText("")
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
