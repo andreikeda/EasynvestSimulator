@@ -21,4 +21,9 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getTargetContext()
         assertEquals("br.com.alil.easynvestsimulator", appContext.packageName)
     }
+
+    @Test
+    fun checkInputDate() {
+
+    }
 }

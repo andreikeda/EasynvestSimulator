@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity(), MainView {
 
     override fun onDestroy() {
         presenter?.unregister()
+        presenter = null
 
         super.onDestroy()
     }
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity(), MainView {
             presenter?.onSimulateClicked(et_first_input.text.toString(), et_second_input.text.toString(), et_third_input.text.toString())
         }
         et_second_input.setOnFocusChangeListener { v, hasFocus ->
-            if (hasFocus) {
+            if (hasFocus && et_second_input.tag == "empty") {
                 et_second_input.addDateTextChangeListener()
             }
         }

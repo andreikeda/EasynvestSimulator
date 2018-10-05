@@ -21,6 +21,13 @@ class DetailsActivity : AppCompatActivity(), DetailsView {
         presenter?.onActivityCreated(intent.getSerializableExtra(EXTRA_SIMULATE) as SimulateResponse)
     }
 
+    override fun onDestroy() {
+        presenter?.unregister()
+        presenter = null
+
+        super.onDestroy()
+    }
+
     override fun setOutputAnnualGrossRateProfit(annualGrossRateProfit: Double) {
         tv_output_annual_gross_rate_profit.text = getString(R.string.formatted_percent, annualGrossRateProfit)
     }
@@ -32,7 +39,7 @@ class DetailsActivity : AppCompatActivity(), DetailsView {
 
     override fun setOutputGrossAmountProfit(grossAmountProfit: Double) {
         tv_output_gross_amount_profit.text = getString(R.string.formatted_currency, grossAmountProfit)
-        tv_gross_amount_profit.text = getString(R.string.formatted_currency, grossAmountProfit)
+        tv_gross_amount_profit.text = getString(R.string.label_details_gross_amount_formatted, grossAmountProfit)
     }
 
     override fun setOutputInvestedAmount(investedAmount: Double) {

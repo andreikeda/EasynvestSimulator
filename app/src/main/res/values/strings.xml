@@ -5,6 +5,7 @@
     <string name="button_simulate_again">Simular novamente</string>
 
     <string name="error_empty_field">Todos os campos devem ser preenchidos</string>
+    <string name="error_invalid_date">Campo data inválido</string>
 
     <string name="formatted_currency">R$ %.2f</string>
     <string name="formatted_percent">%.2f%%</string>
@@ -15,7 +16,7 @@
     <string name="hint_percent">100%</string>
 
     <string name="label_details_annual_gross_rate_profit">Rentabilidade anual</string>
-    <string name="label_details_gross_amount_formatted">Rendimento total de R$%.2f</string>
+    <string name="label_details_gross_amount_formatted">Rendimento total de R$ %.2f</string>
     <string name="label_details_gross_amount">Valor bruto do investimento</string>
     <string name="label_details_gross_amount_profit">Valor do rendimento</string>
     <string name="label_details_invested_amount">Valor aplicado inicialmente</string>

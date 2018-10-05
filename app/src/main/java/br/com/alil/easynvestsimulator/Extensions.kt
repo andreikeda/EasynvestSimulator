@@ -7,7 +7,8 @@ import android.text.TextWatcher
 import android.widget.EditText
 import br.com.alil.easynvestsimulator.details.view.DetailsActivity
 import br.com.alil.easynvestsimulator.domain.model.SimulateResponse
-
+import java.text.ParseException
+import java.text.SimpleDateFormat
 
 
 const val EXTRA_SIMULATE = "e_simulate"
@@ -66,4 +67,44 @@ fun EditText.addDateTextChangeListener() {
         override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
     }
     addTextChangedListener(mDateEntryWatcher)
+    tag = "hasTextChangedListener"
+}
+
+fun String.isDateValid() : Boolean {
+    val sdf = SimpleDateFormat("dd/MM/yyyy")
+    sdf.isLenient = false
+
+    try {
+        val date = sdf.parse(this)
+        System.out.println(date)
+    } catch (e: ParseException) {
+        e.printStackTrace()
+        return false
+    }
+
+    return true
+}
+
+fun String.convertDateToAPIFormat() : String {
+    val originalFormat = SimpleDateFormat("dd/MM/yyyy")
+    val targetFormat = SimpleDateFormat("yyyy/MM/dd")
+    return try {
+        val date = originalFormat.parse(this)
+        targetFormat.format(date)
+    } catch (ex: ParseException) {
+        // Handle Exception.
+        ""
+    }
+}
+
+fun String.convertDateToHumanFormat() : String {
+    val targetFormat = SimpleDateFormat("dd/MM/yyyy")
+    val originalFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+    return try {
+        val date = originalFormat.parse(this)
+        targetFormat.format(date)
+    } catch (ex: ParseException) {
+        // Handle Exception.
+        ""
+    }
 }

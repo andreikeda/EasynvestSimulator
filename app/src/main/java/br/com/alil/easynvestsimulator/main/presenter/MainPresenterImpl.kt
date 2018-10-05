@@ -1,8 +1,11 @@
 package br.com.alil.easynvestsimulator.main.presenter
 
 import android.app.Activity
+import android.util.Log
 import br.com.alil.easynvestsimulator.R
+import br.com.alil.easynvestsimulator.convertDateToAPIFormat
 import br.com.alil.easynvestsimulator.domain.model.SimulateResponse
+import br.com.alil.easynvestsimulator.isDateValid
 import br.com.alil.easynvestsimulator.main.interactor.MainInteractor
 import br.com.alil.easynvestsimulator.main.interactor.MainInteractorImpl
 import br.com.alil.easynvestsimulator.main.router.MainRouter
@@ -27,12 +30,16 @@ class MainPresenterImpl(var view: MainView?) : MainPresenter, MainInteractorOutp
             view?.showError(R.string.error_empty_field)
             return
         }
+        if (!maturityDate.isDateValid()) {
+            view?.showError(R.string.error_invalid_date)
+            return
+        }
         if (rate.isEmpty()) {
             view?.showError(R.string.error_empty_field)
             return
         }
         view?.showLoading()
-        interactor?.simulate(investedAmout.toDouble(), rate.toInt(), maturityDate)
+        interactor?.simulate(investedAmout.toDouble(), rate.toInt(), maturityDate.convertDateToAPIFormat())
     }
 
     override fun unregister() {
