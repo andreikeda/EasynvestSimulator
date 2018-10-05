@@ -1,11 +1,13 @@
 package br.com.alil.easynvestsimulator.main.view
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import br.com.alil.easynvestsimulator.R
 import br.com.alil.easynvestsimulator.addDateTextChangeListener
+import br.com.alil.easynvestsimulator.details.view.DetailsActivity
 import br.com.alil.easynvestsimulator.main.presenter.MainPresenter
 import br.com.alil.easynvestsimulator.main.presenter.MainPresenterImpl
 import kotlinx.android.synthetic.main.activity_main.*

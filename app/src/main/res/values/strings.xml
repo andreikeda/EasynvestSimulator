@@ -6,11 +6,29 @@
 
     <string name="error_empty_field">Todos os campos devem ser preenchidos</string>
 
+    <string name="formatted_currency">R$ %.2f</string>
+    <string name="formatted_percent">%.2f%%</string>
+    <string name="formatted_tax" formatted="false">R$ %.2f (%.2f%%)</string>
+
     <string name="hint_currency">R$</string>
     <string name="hint_date">dia/mês/ano</string>
     <string name="hint_percent">100%</string>
 
+    <string name="label_details_annual_gross_rate_profit">Rentabilidade anual</string>
+    <string name="label_details_gross_amount_formatted">Rendimento total de R$%.2f</string>
+    <string name="label_details_gross_amount">Valor bruto do investimento</string>
+    <string name="label_details_gross_amount_profit">Valor do rendimento</string>
+    <string name="label_details_invested_amount">Valor aplicado inicialmente</string>
+    <string name="label_details_investiment_tax">IR sobre o investimento</string>
+    <string name="label_details_maturity_date">Data de resgate</string>
+    <string name="label_details_maturity_days">Dias corridos</string>
+    <string name="label_details_monthly_gross_rate_profit">Rendimento mensal</string>
+    <string name="label_details_net_amount">Valor líquido do investimento</string>
+    <string name="label_details_rate">Percentual do CDI do investimento</string>
+    <string name="label_details_rate_profit">Rentabilidade no período</string>
+    <string name="label_details_title">Resultado da simulação</string>
     <string name="label_first_input">Quanto você gostaria de aplicar?*</string>
     <string name="label_second_input">Qual a data de vencimento do investimento?*</string>
     <string name="label_third_input">Qual o percentual do CDI do investimento?*</string>
+
 </resources>
