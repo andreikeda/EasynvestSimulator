@@ -19,6 +19,7 @@ class DetailsActivity : AppCompatActivity(), DetailsView {
 
         presenter = DetailsPresenterImpl(this)
         presenter?.onActivityCreated(intent.getSerializableExtra(EXTRA_SIMULATE) as SimulateResponse)
+        bt_simulate_again.setOnClickListener { presenter?.onSimulateAgainClicked() }
     }
 
     override fun onDestroy() {

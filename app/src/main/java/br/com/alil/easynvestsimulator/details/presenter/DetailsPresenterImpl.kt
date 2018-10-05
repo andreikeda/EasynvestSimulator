@@ -1,13 +1,18 @@
 package br.com.alil.easynvestsimulator.details.presenter
 
+import android.app.Activity
 import android.arch.lifecycle.MutableLiveData
 import br.com.alil.easynvestsimulator.convertDateToHumanFormat
+import br.com.alil.easynvestsimulator.details.router.DetailsRouter
+import br.com.alil.easynvestsimulator.details.router.DetailsRouterImpl
 import br.com.alil.easynvestsimulator.details.view.DetailsView
 import br.com.alil.easynvestsimulator.domain.model.SimulateResponse
 
 class DetailsPresenterImpl(var view: DetailsView?) : DetailsPresenter {
 
     var data: MutableLiveData<SimulateResponse> = MutableLiveData()
+
+    private var router: DetailsRouter? = DetailsRouterImpl(view as Activity)
 
     override fun onActivityCreated(response: SimulateResponse?) {
         response?.let { data.value = it }
@@ -27,7 +32,13 @@ class DetailsPresenterImpl(var view: DetailsView?) : DetailsPresenter {
         }
     }
 
+    override fun onSimulateAgainClicked() {
+        router?.goBackToMain()
+    }
+
     override fun unregister() {
+        router?.unregister()
+        router = null
         view = null
     }
 
